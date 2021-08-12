@@ -1,0 +1,91 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+    background-color: black;
+}
+
+h1 {
+    color: rgb(155, 0, 147);
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(155, 0, 147);
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+header {
+	background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
+	/* COR DO FUNDO */
+	color: #ffc5c5;
+	/* COR DA LETRA */
+	margin: 0;
+	height: 42px;
+	padding: 8px 0 5px 0;
+	position: fixed;
+	width: 100%;
+}
+.wrapper img {
+	/*border: 1px dotted #BBBBBB;*/
+	width: 40px;
+	margin: 0 auto 0 auto;
+}
+.wrapper {
+	/*border: 1px dotted #BBBBBB;*/
+	width: 980px;
+	margin: 0 auto 0 auto;
+}
+
+header .wrapper img {
+	width: 40px;
+	/* largura */
+	float: left;
+}
+
+header .wrapper span {
+	display: block;
+	float: left;
+	margin: 12px 0px 0px 8px;
+}
+
+header .wrapper nav {
+	display: block;
+	float: right;
+	margin: 12px 0px 0px 8px;
+	font-size: 15px;
+	/* TAMANHO DA FONTE */
+}
+
+header .wrapper nav ul {
+	margin: 0;
+}
+
+header .wrapper nav ul li {
+	display: inline-block;
+	margin: 0px 0px 0px 18px;
+}
+
+
+footer , p {
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: rgb(155, 0, 147);    
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 18px;
+    padding-top: 20px;
+    font-weight: bold;
+}    
