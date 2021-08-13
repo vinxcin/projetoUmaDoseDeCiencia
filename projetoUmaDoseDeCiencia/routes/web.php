@@ -22,6 +22,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/feed', function () {
-    return view('feed');
+Route::get('/eventos', function () {
+    return view('eventos');
+});
+
+Route::get('/artigos', function () {
+    return view('artigos');
 });
