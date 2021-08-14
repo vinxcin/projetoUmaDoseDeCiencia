@@ -1,8 +1,12 @@
 body,
 html {
-	margin: 0;
-	padding: 0;
-    background-color: black;
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/galaxia.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
 }
 
 h1 {
@@ -20,65 +24,72 @@ a {
 }
 
 header {
-	background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
-	/* COR DO FUNDO */
-	color: #ffc5c5;
-	/* COR DA LETRA */
-	margin: 0;
-	height: 42px;
-	padding: 10px 0 8px 0;
-	position: fixed;
-	width: 100%;
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
+    /* COR DO FUNDO */
+    color: #ffc5c5;
+    /* COR DA LETRA */
+    margin: 0;
+    height: 42px;
+    padding: 10px 0 8px 0;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #2e1f2d;
+    box-shadow: 0 4px 4px -2px #492f44;
+    -moz-box-shadow: 0 4px 4px -2px #2c0a1e;
+    -webkit-box-shadow: 0 4px 4px -2px #2b0e31;
 }
+
 .wrapper img {
-	/*border: 1px dotted #BBBBBB;*/
-	width: 40px;
-	margin: 0 auto 0 auto;
+    /*border: 1px dotted #BBBBBB;*/
+    width: 40px;
+    margin: 0 auto 0 auto;
 }
+
 .wrapper {
-	/*border: 1px dotted #BBBBBB;*/
-	width: 980px;
-	margin: 0 auto 0 auto;
+    /*border: 1px dotted #BBBBBB;*/
+    width: 980px;
+    margin: 0 auto 0 auto;
 }
 
 header .wrapper img {
-	width: 40px;
-	/* largura */
-	float: left;
+    width: 40px;
+    /* largura */
+    float: left;
 }
 
 header .wrapper span {
-	display: block;
-	float: left;
-	margin: 12px 0px 0px 8px;
+    display: block;
+    float: left;
+    margin: 12px 0px 0px 8px;
 }
 
 header .wrapper nav {
-	display: block;
-	float: right;
-	margin: 12px 0px 0px 8px;
-	font-size: 15px;
-	/* TAMANHO DA FONTE */
+    display: block;
+    float: right;
+    margin: 12px 0px 0px 8px;
+    font-size: 15px;
+    /* TAMANHO DA FONTE */
 }
 
 header .wrapper nav ul {
-	margin: 0;
+    margin: 0;
 }
 
 header .wrapper nav ul li {
-	display: inline-block;
-	margin: 0px 0px 0px 18px;
+    display: inline-block;
+    margin: 0px 0px 0px 18px;
 }
 
 
-footer , p {
+footer,
+p {
     background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
     width: 100%;
     height: 100px;
-    position:relative;
+    position:absolute;
     bottom: 0;
     left: 0;
-    color: rgb(155, 0, 147);    
+    color: rgb(155, 0, 147);
     text-align: center;
     display: flex;
     align-items: center;
@@ -88,9 +99,26 @@ footer , p {
     font-size: 18px;
     padding-top: 5px;
     font-weight: bold;
-} 
+}
 
-img{
-	width: 100%;
-	height:100%;
+.postar{    
+    text-align: center;
+    display: "inline_block";
+    font-family: arial;
+    padding-top: 40px;
+    margin-right: 50px;
+}
+
+.visualizar{        
+    text-align: center;
+    display: "inline_block";
+    font-family: arial;
+    padding-top: 40px;
+    margin-right: 50px;
+}
+
+#models {
+    margin-top: 150px;
+    float: left;
+    margin-left: 600px;
 }
