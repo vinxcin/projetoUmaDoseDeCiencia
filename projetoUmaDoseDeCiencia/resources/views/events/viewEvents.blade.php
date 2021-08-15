@@ -9,7 +9,7 @@
     <form action="">
         <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
     </form>
-    
+
 </div>
 <div id="events-container" class="col-md-12">
     <h2>Próximos Eventos</h2>
@@ -19,7 +19,7 @@
         <div class="card col-md-3 ml-5 block">
             <img src="/img/event.png" alt="{{ $event->title }}">
             <div class="card-body">
-                <p class="card-date">10/09/2020</p>
+                <p class="card-date">{{ date('d/m/Y') , strtotime($event->date)}}</p>
                 <!--VAI PEGAR A DATA DO BANCO DE DADOS EM QUE O EVENTO FOI CADASTRADO -->
                 <h5 class="card-title">{{ $event->title }}</h5>
                 <p class="card-participants">X Participantes</p>
@@ -27,10 +27,26 @@
             </div>
         </div>
         @endforeach
+        @if(count($eventos) == 0)
+        <link rel="stylesheet" href="/css/teste.css">
+        <div class="eventos-indisponiveis">
+            <p>Não há eventos disponiveis!</p>
+        </div>
+        @endif
     </div>
 </div>
+
+
+@if(count($eventos) == 0 || count($eventos) < 7 )
+<link rel="stylesheet" href="/css/teste.css">
 <footer>
     <!--footer é a barra que fica no final da página -->
     <p>Uma Dose de Ciência &copy; 2021</p>
 </footer>
+@else
+<footer>
+    <!--footer é a barra que fica no final da página -->
+    <p>Uma Dose de Ciência &copy; 2021</p>
+</footer>
+@endif
 @endsection

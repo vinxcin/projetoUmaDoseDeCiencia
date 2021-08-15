@@ -40,10 +40,11 @@ class EventoController extends Controller
     {
         $evento = new Evento;
 
-        $evento->title = $request->title;
-        $evento->plataform = $request->plataform;
-        $evento->private = $request->private;
-        $evento->description = $request->description;
+        $evento->title       =  $request->title;
+        $evento->date        =  $request->date;
+        $evento->plataform   =  $request->plataform;
+        $evento->private     =  $request->private;
+        $evento->description =  $request->description;
 
         $evento-> save();
 
