@@ -16,11 +16,15 @@ use App\Http\Controllers\EventoController;
 
 Route::get('/', [EventoController::class, 'index']);
 
-Auth::routes(); 
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/events/create', [EventoController::class, 'create']);
+
+Route::get('/events/show', [EventoController::class, 'show']); 
+
+Route::post('/events', [EventoController::class, 'store']);
 
 Route::get('/artigos', function () {
     return view('artigos');

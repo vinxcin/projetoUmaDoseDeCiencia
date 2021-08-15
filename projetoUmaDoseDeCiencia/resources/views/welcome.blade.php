@@ -17,12 +17,12 @@
         </div>
 
         <div class='visualizar'>
-            <a href="/visualizar_eventos">
+            <a href="/events/show">
                 <button type="button" class="btn btn-primary ml-5">
                     <h1>Visualizar Eventos</h1>
                 </button>
             </a>
-            <a href="/visualizar_artigos">
+            <a href="/artigo/show">
                 <button type="button" class="btn btn-primary ml-5">
                     <h1>Visualizar Artigos</h1>
                 </button>

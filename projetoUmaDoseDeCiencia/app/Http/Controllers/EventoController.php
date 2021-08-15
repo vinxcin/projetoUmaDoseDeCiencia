@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Evento; //CONECTA COM A TABELA EVENTOS
+
 class EventoController extends Controller
 {
     /**
@@ -11,7 +13,10 @@ class EventoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
+
+
         return view('welcome');
     }
 
@@ -20,8 +25,9 @@ class EventoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
-    return view('events.create');
+    public function create()
+    {
+        return view('events.create');
     }
 
     /**
@@ -32,18 +38,30 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $evento = new Evento;
 
+        $evento->title = $request->title;
+        $evento->plataform = $request->plataform;
+        $evento->private = $request->private;
+        $evento->description = $request->description;
+
+        $evento-> save();
+
+        return redirect('/');
+    }
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    
+    public function show()
     {
-        //
+        $eventos = Evento::all(); //ESTÁ PEGANDO TODOS OS EVENTOS QUE JÁ FORAM CADASTRADOS NO BANCO DE DADOS
+
+
+        return view('events.viewEvents', ['eventos' => $eventos]); //está retornando na view todos os eventos que foram cadastrados
     }
 
     /**
