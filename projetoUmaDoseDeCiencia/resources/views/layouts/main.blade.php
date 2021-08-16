@@ -20,8 +20,12 @@
                 @if (Route::has('login'))
                 @auth
                 <li>
-                    <a href="{{ url('/dashboard') }}">{{ Auth::user()->name }}</a>
+                    <a href="{{ url('/dashboard_Artigos') }}">Meus Artigos</a>
                 </li>
+                <li>
+                    <a href="{{ url('/dashboard_Eventos') }}">Meus Eventos</a>
+                </li>
+                
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

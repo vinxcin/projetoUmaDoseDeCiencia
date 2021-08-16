@@ -7,10 +7,6 @@
     <h1 text-align="center">CRIE O SEU EVENTO</h1>
     <form action='/events' method="POST" enctype="multipart/form-data">
         @csrf
-        <!-- <div class="form-group">
-                <label for="image">Imagem do Evento:</label>
-                <input type="file" id="image" name="image" class="from-control-file">
-            </div> -->
         <div class="form-group">
             <b>
                 <label for="title">Evento:</label>

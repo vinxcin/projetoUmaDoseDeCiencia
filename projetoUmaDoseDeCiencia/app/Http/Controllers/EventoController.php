@@ -114,7 +114,7 @@ class EventoController extends Controller
     {
         Evento::findOrFail($request->id)->update($request->all());
 
-        return redirect('/dashboard')
+        return redirect('/dashboard_Eventos')
             ->with('msg', 'Evento editado com sucesso!');
     }
 
@@ -128,7 +128,7 @@ class EventoController extends Controller
     {
         Evento::findOrFail($id)->delete();
 
-        return redirect('/dashboard')
+        return redirect('/dashboard_Eventos')
             ->with('msg', 'Evento excluído com sucesso!');
     }
 }

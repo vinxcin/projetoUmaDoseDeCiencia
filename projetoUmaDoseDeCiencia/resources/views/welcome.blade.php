@@ -10,7 +10,7 @@
                     <h1>Criar Evento</h1>
                 </button>
             </a>
-            <a href="/artigos">
+            <a href="/artigos/create">
                 <button type="button" class="btn btn-primary ml-5">
                     <h1>Submeter Artigo</h1>
                 </button>
@@ -21,12 +21,12 @@
         <div class='visualizar'>
             <a href="/events/show">
                 <button type="button" class="btn btn-primary ml-5">
-                    <h1>Visualizar meus eventos</h1>
+                    <h1>Visualizar eventos</h1>
                 </button>
             </a>
-            <a href="/artigo/show">
+            <a href="/artigos/show">
                 <button type="button" class="btn btn-primary ml-5">
-                    <h1>Visualizar meus artigos</h1>
+                    <h1>Visualizar artigos</h1>
                 </button>
             </a>
         </div>
@@ -41,7 +41,7 @@
                 <h1>Visualizar Eventos</h1>
             </button>
         </a>
-        <a href="/artigo/show">
+        <a href="/artigos/show">
             <button type="button" class="btn btn-primary ml-5 mt-5">
                 <h1>Visualizar Artigos</h1>
             </button>

@@ -6,7 +6,7 @@
 
 <div id="search-container" class="col-md-5 busca">
     <h1>BUSQUE UM EVENTO</h1>
-    <form action="/events/show" method="GET">
+    <form action="/events/show/" method="GET">
         <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
     </form>
 
