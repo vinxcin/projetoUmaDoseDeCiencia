@@ -1,4 +1,5 @@
 @extends('layouts.bootstrap')
+
 <link rel="stylesheet" href="/css/dash.css">
 <div class="col-md-10 offset-md-1 dashboard-title-container">
     <h1>Meus Eventos</h1>
@@ -9,7 +10,7 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome</th>
+                <th scope="col">Evento</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
@@ -28,13 +29,18 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger delete-btn">
                             <ion-icon name="trash-outline"></ion-icon>Delete</button>
+                            <div class="modal" tabindex="-1">
+ 
                     </form>
+                    <button class="btn btn-primary" value="Voltar"><a href="/">Voltar</a></button>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <button class=" btn btn-dark" value="Voltar"><a href="/">Voltar</a></button>
     @else
     <p>Você ainda não tem eventos, <a href="/events/create">criar evento</a></p>
+    <button class=" btn btn-dark" value="Voltar"><a href="/">Voltar</a></button>
     @endif
 </div>

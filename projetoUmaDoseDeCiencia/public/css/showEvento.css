@@ -29,17 +29,37 @@ h2{
     margin: 50px 0 20px;
 
 }
+.block p{
+    display: inline-block;
+    margin-left: 38%;
+}
 .subtitle{
     padding:5px 0 0 0;
     color:aliceblue;
     margin: 0;
 }
 
+
+
+
+.card-artigo p, h5{
+    color: rgb(0, 0, 0);
+    border-color: rgb(177, 6, 245);
+    margin-top: 20px;
+}
+
+#card-artigo{
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
+    padding: 15px 200px ;
+    margin-bottom: 30px;
+    width: 1680px;
+}
+
 footer p {
     background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
     width: 100%;
     height: 100px;
-    position:fixed;
+    position:relative;
     bottom: 0;
     left: 0;
     color: rgb(155, 0, 147);
@@ -53,18 +73,4 @@ footer p {
     padding-top: 5px;
     font-weight: bold;
     margin-bottom: 0;
-}
-
-.card-artigo p, h5{
-    color: rgb(255, 0, 0);
-    border: solid  1px;
-    border-color: rgb(177, 6, 245);
-    
-}
-
-#card-artigo{
-    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(22, 5, 21));
-    padding: 15px 200px ;
-    margin-bottom: 30px;
-    width: 1680px;
 }

@@ -33,9 +33,9 @@
                     <label for="title">Descrição:</label>
                     <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?" value="{{ $eventos->description }}"></textarea>
                 </div>
-            </b>
-
+            </b> 
             <input type="submit" class="btn btn-primary" value="Editar Evento">
+            <button class=" btn btn-dark" value="Voltar"><a href="/">Voltar</a></button>
     </form>
 </div>
 <br>

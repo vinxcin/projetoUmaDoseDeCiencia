@@ -35,6 +35,7 @@
             </b>
 
             <input type="submit" class="btn btn-primary" value="Criar Evento">
+            <button class="btn btn-dark" value="Voltar"><a href="/">Voltar</a></button>
     </form>
 </div>
 <br>

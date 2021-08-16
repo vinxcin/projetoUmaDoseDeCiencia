@@ -23,7 +23,9 @@
             </b>
 
             <input type="submit" class="btn btn-primary" value="Criar Artigo">
+            <button class=" btn btn-dark" value="Voltar"><a href="/">Voltar</a></button>
     </form>
+    
 </div>
 <br>
 <footer>
@@ -33,5 +35,6 @@
 @endauth
 @guest
 <H1>VOCÊ NÃO ESTÁ LOGADO!</H1>
+<button class=" btn btn-dark" value="Voltar"><a href="/">Voltar</a></button>
 @endguest
 @endsection
