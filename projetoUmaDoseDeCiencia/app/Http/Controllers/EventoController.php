@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Evento; //CONECTA COM A TABELA EVENTOS
+use App\Models\User;
 
 class EventoController extends Controller
 {
@@ -15,8 +16,6 @@ class EventoController extends Controller
      */
     public function index()
     {
-
-
         return view('welcome');
     }
 
@@ -46,7 +45,10 @@ class EventoController extends Controller
         $evento->private     =  $request->private;
         $evento->description =  $request->description;
 
-        $evento-> save();
+        $user = auth()->user();
+        $evento->user_id = $user->id;
+
+        $evento->save();
 
         return redirect('/');
     }
@@ -56,26 +58,51 @@ class EventoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
+
     public function show()
     {
-        $eventos = Evento::all(); //ESTÁ PEGANDO TODOS OS EVENTOS QUE JÁ FORAM CADASTRADOS NO BANCO DE DADOS
 
+        $search =  request('search');
 
-        return view('events.viewEvents', ['eventos' => $eventos]); //está retornando na view todos os eventos que foram cadastrados
+        if ($search) {
+            $eventos = Evento::where([
+                ['title', 'like', '%' . $search . '%']
+            ])->get();
+        } else {
+            $eventos = Evento::all();  //ESTÁ PEGANDO TODOS OS EVENTOS QUE JÁ FORAM CADASTRADOS NO BANCO DE DADOS
+        }
+
+        return view('events.viewEvents', ['eventos' => $eventos, 'search' => $search]); //está retornando na view todos os eventos que foram cadastrados
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    //  public function show($id) {
+
+    //     $eventos = Evento::findorFail($id);
+
+    //     $eventsOwner = User::where('id', $eventos->user_id)->first()->toArray();
+
+    //     return view('events.viewEvents', ['eventos' => $eventos, 'eventsOwner' => $eventsOwner]);
+
+    //  }
+
+    public function dashboard()
     {
-        //
+
+        $user = auth()->user();
+
+        $eventos = $user->eventos;
+
+        return view('events.dashboard', ['eventos' => $eventos]);
     }
 
+    public function edit($id) {
+
+        $eventos = Evento::findOrFail($id);
+
+        return view('events.edit', ['eventos' => $eventos]);
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -85,7 +112,10 @@ class EventoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Evento::findOrFail($request->id)->update($request->all());
+
+        return redirect('/dashboard')
+            ->with('msg', 'Evento editado com sucesso!');
     }
 
     /**
@@ -96,6 +126,9 @@ class EventoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Evento::findOrFail($id)->delete();
+
+        return redirect('/dashboard')
+            ->with('msg', 'Evento excluído com sucesso!');
     }
 }

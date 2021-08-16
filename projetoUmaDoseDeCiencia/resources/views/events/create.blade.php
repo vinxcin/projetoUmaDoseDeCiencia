@@ -1,5 +1,6 @@
 @extends('layouts.bootstrap')
 @section('content')
+@auth
 <link rel="stylesheet" href="/css/create.css">
 <br>
 <div id="event-create-container" class="col-md-6 offset-md-3">
@@ -45,4 +46,8 @@
     <!--footer é a barra que fica no final da página -->
     <p>Uma Dose de Ciência &copy; 2021</p>
 </footer>
+@endauth
+@guest
+<H1>VOCÊ NÃO ESTÁ LOGADO!</H1>
+@endguest
 @endsection

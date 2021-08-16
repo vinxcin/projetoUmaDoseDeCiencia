@@ -100,25 +100,42 @@ p {
     padding-top: 5px;
     font-weight: bold;
 }
-
+ 
 .postar{    
     text-align: center;
     display: "inline_block";
     font-family: arial;
-    padding-top: 40px;
+    padding: 40px;
     margin-right: 50px;
-}
+} 
 
-.visualizar{        
+#auth-create{      
+    float: left;  
     text-align: center;
     display: "inline_block";
     font-family: arial;
-    padding-top: 40px;
-    margin-right: 50px;
+    padding: 40px 10px 20px 10px ;
+    margin-right: 100px;
+   
+}
+#auth-view{      
+    float: left;  
+    text-align: center;
+    display: "inline_block";
+    font-family: arial;
+    padding: 40px 10px 20px 10px ;
+    margin-left: 478px;
+   
 }
 
 #models {
     margin-top: 150px;
     float: left;
     margin-left: 600px;
+}
+
+#guest {
+    float: left;
+    margin: 250px 0 0 570px;
+    
 }

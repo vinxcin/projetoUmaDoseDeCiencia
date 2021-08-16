@@ -10,7 +10,7 @@
 </head>
 <header>
     <div class="wrapper">
-        <a href="{{ url('/home') }}">
+        <a href="{{ url('/') }}">
             <img src="img/atomo.png">
             <span> Uma Dose de Ciência</span>
         </a>
@@ -19,7 +19,21 @@
             <ul>
                 @if (Route::has('login'))
                 @auth
-                <a href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
+                <li>
+                    <a href="{{ url('/dashboard') }}">{{ Auth::user()->name }}</a>
+                </li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                            {{ __('Sair') }}
+                        </x-jet-dropdown-link>
+                    </form>
+
+                </li>
+
                 @else
 
                 <li><a href="{{ route('login') }}">Entrar</a></li>

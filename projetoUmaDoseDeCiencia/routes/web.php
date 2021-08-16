@@ -16,16 +16,20 @@ use App\Http\Controllers\EventoController;
 
 Route::get('/', [EventoController::class, 'index']);
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/events/create', [EventoController::class, 'create']);
 
-Route::get('/events/show', [EventoController::class, 'show']); 
+Route::get('/events/show/', [EventoController::class, 'show']); 
 
 Route::post('/events', [EventoController::class, 'store']);
 
-Route::get('/artigos', function () {
-    return view('artigos');
-});
+Route::get('/dashboard', [EventoController::class, 'dashboard'])->middleware('auth');
+
+Route::delete('/events/{id}', [EventoController::class, 'destroy'])->middleware('auth');
+
+Route::get('/events/edit/{id}', [EventoController::class, 'edit']);
+
+Route::put('/events/update/{id}', [EventoController::class, 'update'])->middleware('auth');
